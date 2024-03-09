@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function setAuthToken(token, expirationTimeMinutes) {
+        // Validate input parameters
+        if (!token || typeof token !== "string" || token.trim() === "") {
+          console.error("Invalid token provided");
+          return;
+        }
+
+        if (
+          !expirationTimeMinutes ||
+          typeof expirationTimeMinutes !== "number" ||
+          expirationTimeMinutes <= 0
+        ) {
+          console.error("Invalid expiration time provided");
+          return;
+        }
+
+        // Calculate expiration time in milliseconds
+        const expirationTimeMillis = expirationTimeMinutes * 60 * 1000;
+        const expirationTimestamp = Date.now() + expirationTimeMillis;
+
+        // Create an object to store token and expiration time
+        const authData = {
+          token: token,
+          expiration: expirationTimestamp,
+        };
+
+        // Convert the object to a JSON string
+        const authDataString = JSON.stringify(authData);
+
+        // Store the JSON string in localStorage
+        localStorage.setItem("authData", authDataString);
+
+        console.log("Authentication token set successfully");
+      }
+
+      // Example usage:
+      const authToken = "AuthTokenHere";
+      const expirationTimeMinutes = 30; // Set the desired expiration time in minutes
+
+      setAuthToken(authToken, expirationTimeMinutes);
+    </script>
+  </body>
+</html>

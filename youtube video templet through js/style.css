@@ -1,0 +1,62 @@
+body{
+  background-color: rgb(75, 61, 61);
+}
+
+.container .createCard{
+width: 200px;
+height: 130px;
+float: left;
+background-size: 100% 100%;
+margin-right: 10px;
+border-radius: 10px;
+display: flex;
+align-items:end;
+justify-content: end;
+}
+/* *{
+  margin-right: 4px;
+ 
+} */
+.container{
+  margin-top: 50px;
+  color:white;
+  width:100%;
+  height: 130px;
+  background-color: rgba(0, 0, 0, 0.737);
+  border-radius: 10px;
+}
+
+.title{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+padding-top: 10px;
+}
+.cName{
+  padding-top:-21px;
+display: inline;
+  color:rgb(201, 193, 193);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.views{
+  display: inline;
+  color:rgb(201, 193, 193);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.Month{
+  display: inline;
+  color:rgb(201, 193, 193);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.length{
+margin-right: 5px;
+  font-size: medium;
+color:white;
+background-color: black;
+border-radius: 5px;
+width: 55px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+display: flex;
+justify-content: center;
+}

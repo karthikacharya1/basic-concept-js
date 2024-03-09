@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function setAuthToken(token, expirTimeMin) {
+        if (!token || typeof token !== "string" || token.trim() == "") {
+          console.error("invalid token provided..");
+          return;
+        }
+        if (
+          !expirTimeMin ||
+          expirTimeMin <= 0 ||
+          typeof expirTimeMin !== "number"
+        ) {
+          console.error("invalid expir time provided...");
+          return;
+        }
+
+        const expirTimeInMillis = expirTimeMin * 60 * 1000;
+        const expirTimeStamp = Date.now() + expirTimeInMillis;
+
+        const AuthObject = {
+          token: token,
+          expireTime: expirTimeStamp,
+        };
+
+        const ObjToString = JSON.stringify(AuthObject);
+        localStorage.setItem("AuthData", ObjToString);
+      }
+      const authToken = "break";
+      const expirTimeMin = 30;
+      setAuthToken(authToken, expirTimeMin);
+      console.log("Authentication token set successfully");
+    </script>
+  </body>
+</html>

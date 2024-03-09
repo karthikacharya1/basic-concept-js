@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function PlaceOrder(order) {
+        return new Promise(function (resolve, reject) {
+          let randomDeley = Math.floor(Math.random() * 6 + 1);
+          setTimeout(() => {
+            if (order == true) {
+              resolve("Your order was successfully confirmed");
+            } else {
+              reject(
+                "your order was failed to confirm! please reorder after sometime..."
+              );
+            }
+          }, randomDeley * 1000);
+        })
+          .then(function (res) {
+            console.log(res);
+          })
+          .catch(function (rej) {
+            console.log(rej);
+          });
+      }
+
+      async function main() {
+        let order = false;
+        await PlaceOrder(order);
+      }
+      main();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //usage of promise to get result
+      async function brewCoffee(userInput) {
+        return new Promise(function (resolve, reject) {
+          let typeOfCoffee = ["cold", "worm", "hot"];
+          let randomDelay = Math.floor(Math.random() * 6 + 1);
+          setTimeout(() => {
+            if (typeOfCoffee.includes(userInput)) {
+              resolve("Coffee is ready sir...");
+            } else {
+              reject("Op ,we did'nt get your coffee type!");
+            }
+          }, randomDelay * 1000);
+        })
+          .then(function (res) {
+            console.log(res);
+          })
+          .catch(function (rej) {
+            console.log(rej);
+          });
+      }
+
+      //traversing array
+      // async function convertCoffee(typeOfCoffee) {
+      //
+      // }
+      //calling main function
+      async function main() {
+        let userInput = "cold";
+
+        await brewCoffee(userInput);
+      }
+      main();
+    </script>
+  </body>
+</html>

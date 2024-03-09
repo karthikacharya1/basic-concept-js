@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const password = "ddffddSD3d";
+
+      function paswodValidator() {
+        if (password.length < 8) {
+          console.log("please enter atlist 8 character length password");
+        } else if (/[0-9]/.test(password) == false) {
+          console.log("Password must include digit!");
+        } else if (/[A-Z]/.test(password) == false) {
+          console.log("Password must include any one upper case letter");
+        } else if (/[a-z]/.test(password) == false) {
+          console.log("Password must include any one lower case letter");
+        } else {
+          console.log("your password Accepted.....");
+        }
+      }
+      paswodValidator();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function array(arr) {
+        return new Promise(function (resolve, reject) {
+          var empArr = [];
+
+          setTimeout(() => {
+            arr.map((num) => empArr.push(num * 2));
+            resolve(empArr);
+          }, 500);
+        });
+      }
+
+      async function main() {
+        const arr = [1, 2, 3, 4, 5, 6];
+        await array(arr).then(function (empArr) {
+          console.log(empArr);
+        });
+      }
+      main();
+      // async function asyncArrayMapping(numbers) {
+      //   const multipliedPromises = numbers.map(async (number) => {
+      //     // Wrap the multiplication operation in a Promise
+      //     return new Promise((resolve) => {
+      //       setTimeout(() => {
+      //         const result = number * 2;
+      //         resolve(result);
+      //       }, 500);
+      //     });
+      //   });
+
+      //   // Use Promise.all to wait for all promises to resolve
+      //   const multipliedResults = await Promise.all(multipliedPromises);
+
+      //   return multipliedResults;
+      // }
+
+      // // Example usage
+      // const inputArray = [1, 2, 3, 4, 5];
+      // asyncArrayMapping(inputArray).then((result) => {
+      //   console.log(result); // Output: [2, 4, 6, 8, 10]
+      // });
+    </script>
+  </body>
+</html>

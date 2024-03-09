@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function CalculateTotal(arrayList) {
+      //   const tempAr = [];
+      //   for (const i of arrayList) {
+      //     tempAr.push(i.Price * i.Qty);
+      //   }
+
+      //   var total = 0;
+      //   for (let index = 0; index < tempAr.length; index++) {
+      //     total += tempAr[index];
+      //   }
+
+      //   return total;
+      // }
+
+      function CalculateTotal(arrayList) {
+        let su = arrayList.reduce(function (sum, cur) {
+          return sum + cur.Price * cur.Qty;
+        }, 0);
+        return su;
+      }
+
+      const arrayList = [
+        { name: "Watch", Price: 2000, Qty: 2 },
+        { name: "Apple", Price: 50000, Qty: 3 },
+        { name: "Mouse", Price: 300, Qty: 1 },
+        { name: "Lap", Price: 2000, Qty: 1 },
+      ];
+
+      const outPut = CalculateTotal(arrayList);
+      console.log("Total cost of Items: ", outPut);
+    </script>
+  </body>
+</html>

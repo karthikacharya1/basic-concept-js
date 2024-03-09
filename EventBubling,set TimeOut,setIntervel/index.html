@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      align-items: center;
+      justify-items: center;
+      display: flex;
+      background-color: blueviolet;
+      width:100%;
+      height: 150px;
+      margin: 30px 30px 30px 30px;
+    }
+    .parent{
+      align-items: center;
+      justify-items: center;
+      display: flex;
+      background-color: yellow;
+      width:100%;
+      height: 100px;
+    }
+    .child{
+      background-color: brown;
+      width:100%;
+      height: 50px; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="parent">
+    <div class="child">
+      
+    </div>
+    </div>
+  </div>
+  <script>
+  document.querySelector('.container').addEventListener('click',(e)=>{
+    e.stopPropagation()
+    alert("container clicked");
+   
+  });
+  document.querySelector('.parent').addEventListener('click',(e)=>{
+    e.stopPropagation()
+    alert("parant clicked");
+  });
+  document.querySelector('.c'/hild').addEventListener('keydown',(e)=>{
+    e.stopPropagation()
+    console.log(e,e.key)
+  });
+  setInterval(() => {
+    
+  }, 3000);
+  
+
+  </script>
+</body>
+</html>
